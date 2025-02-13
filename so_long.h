@@ -4,12 +4,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include "mlx.h"
 
 /*===============UTILS=============*/
 
-static int	count_words(char const *s, char c);
+// static int	count_words(char const *s, char c);
 
-static void	ft_free(char **new_str, int j);
+// static void	ft_free(char **new_str, int j);
 
 char	**ft_split(char const *s, char c);
 
