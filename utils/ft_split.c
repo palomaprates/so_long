@@ -1,5 +1,27 @@
 #include "../so_long.h"
 
+static void	ft_free(char **new_str, int j)
+{
+	while (j > 0)
+		free(new_str[j--]);
+	free(new_str);
+}
+static int	count_words(char const *s, char c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s && s[i])
+	{
+		if ((s[i + 1] == c && s[i] != c)
+			|| (s[i + 1] == '\0' && s[i] != c))
+			j++;
+		i++;
+	}
+	return (j);
+}
 char	**ft_split(char const *s, char c)
 {
 	char	**new_str;
