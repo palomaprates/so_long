@@ -1,8 +1,6 @@
 CFLAGS = #-Wall -Wextra -Werror
 
 SRCS =	main/main.c							\
-			utils/count_words.c				\
-			utils/ft_free.c					\
 			utils/ft_split.c					\
 			utils/ft_strjoin.c				\
 			utils/ft_strlcpy.c				\
@@ -24,11 +22,11 @@ NAME = so_long
 
 all: $(NAME) 
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
-
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+
+$(NAME): $(OBJS)
+	$(CC) $(OBJS) -Lmlx -lmlx -L/opt/X11/lib -lXext -lX11 -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)
