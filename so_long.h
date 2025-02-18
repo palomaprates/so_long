@@ -6,6 +6,45 @@
 # include <stdio.h>
 # include "mlx.h"
 
+typedef struct	s_image {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		width;
+	int		height;
+}				t_image;
+
+typedef struct	s_data {
+	t_image canva;
+} 				t_data;
+
+typedef struct s_avatar_sprite{
+	int	x;
+	int	y;
+	int	width;
+	int	height;
+}						t_avatar_sprite;
+
+	void	*mlx;
+	void	*mlx_win;
+	t_image	background;
+	t_image	player;
+	t_image	canva;
+	t_avatar_sprite	avatar;
+
+
+	enum {
+	ON_KEYDOWN = 2,
+	ON_KEYUP = 3,
+	ON_MOUSEDOWN = 4,
+	ON_MOUSEUP = 5,
+	ON_MOUSEMOVE = 6,
+	ON_EXPOSE = 12,
+	ON_DESTROY = 17
+};
+
 /*===============UTILS=============*/
 
 // static int	count_words(char const *s, char c);
@@ -39,5 +78,19 @@ int	is_retangular_map(char **lines_map);
 int	number_of_elements(char **lines_map, char c);
 
 int	parsing_map(char **lines_map);
+
+void print_background();
+
+void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
+
+int	get_pixel_canva(t_image *image, int x, int y);
+
+void	print_image(t_image *canva, t_image *image, int x, int y);
+
+void	print_avatar(t_image *canva);
+
+int	move_player(int key_code, void *param);
+
+
 
 #endif

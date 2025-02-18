@@ -14,6 +14,13 @@ SRCS =	main/main.c							\
 			map_check/is_retangular_map.c	\
 			map_check/number_of_elements.c	\
 			map_check/parsing_map.c			\
+			movements/move_player.c			\
+			print_elements/print_avatar.c	\
+			print_elements/print_background.c \
+			print_elements/print_image.c		\
+			get_pixel_canva.c						\
+			my_mlx_pixel_put.c					\
+
 
 			
 OBJS = $(SRCS:.c=.o)
