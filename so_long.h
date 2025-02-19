@@ -16,10 +16,6 @@ typedef struct	s_image {
 	int		height;
 }				t_image;
 
-typedef struct	s_data {
-	t_image canva;
-} 				t_data;
-
 typedef struct s_avatar_sprite{
 	int	x;
 	int	y;
@@ -27,12 +23,23 @@ typedef struct s_avatar_sprite{
 	int	height;
 }						t_avatar_sprite;
 
+typedef struct	s_data {
 	void	*mlx;
 	void	*mlx_win;
 	t_image	background;
 	t_image	player;
 	t_image	canva;
 	t_avatar_sprite	avatar;
+} 				t_data;
+
+
+
+	// void	*mlx;
+	// void	*mlx_win;
+	// t_image	background;
+	// t_image	player;
+	// t_image	canva;
+	// t_avatar_sprite	avatar;
 
 
 	enum {
@@ -46,10 +53,6 @@ typedef struct s_avatar_sprite{
 };
 
 /*===============UTILS=============*/
-
-// static int	count_words(char const *s, char c);
-
-// static void	ft_free(char **new_str, int j);
 
 char	**ft_split(char const *s, char c);
 
@@ -87,9 +90,9 @@ int	get_pixel_canva(t_image *image, int x, int y);
 
 void	print_image(t_image *canva, t_image *image, int x, int y);
 
-void	print_avatar(t_image *canva);
+void	print_avatar(t_image *canva, t_data data);
 
-int	move_player(int key_code, void *param);
+int	move_player(int key_code, t_data *param);
 
 
 
