@@ -35,9 +35,11 @@ int	keys_hook(int key_code, t_data *param)
 			param->avatar.width = 1;
 	}
 	print_background(&param->canva);
-	// print_walls(&param->canva, param->wall, param->avatar, fd);
 	// print_image(&param->canva, &param->player, param->avatar.x, param->avatar.y);
 	print_avatar(&param->canva, param->player, param->avatar);
+	print_walls(&param->canva, param);
+	// print_walls(&param->canva, param->wall, param->avatar, param->map);
+
 	mlx_put_image_to_window(param->mlx, param->mlx_win, param->canva.img, 0, 0);
 	if (key_code == 65307)
 		close_win(param);

@@ -77,6 +77,8 @@ int	number_of_elements(char **lines_map, char c);
 
 int	parsing_map(char **lines_map);
 
+int	len_map(char **lines_map);
+
 void print_background(t_image *canva);
 
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
@@ -87,11 +89,12 @@ void	print_image(t_image *canva, t_image *image, int x, int y);
 
 void	print_avatar(t_image *canva, t_image player, t_sprite avatar);
 
-// int	move_player(int key_code, t_data *param);
 int	keys_hook(int key_code, t_data *param);
 
-// void	print_walls(t_image *canva, t_image	wall, int fd);
-void	print_walls(t_image *canva, t_image	wall, t_sprite wall_sprite, int fd);
+// void	print_walls(t_image *canva, t_image wall, t_sprite wall_sprite, t_data *data);
+// void	print_walls(t_image *canva, t_image wall, t_sprite wall_sprite, char **map);
+void	print_walls(t_image *canva, t_data *data);
+
 
 int	close_win(t_data *param);
 

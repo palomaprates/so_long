@@ -9,16 +9,20 @@ int	destroy_hook(t_data *data)
 
 int	main(int argc, char *argv[])
 {
-	int fd = open("map.ber", O_RDONLY);
-	char **map = get_lines_map(fd);
-	if (!parsing_map(map))
-			return (0);
 	t_data	data;
+	int fd = open("map.ber", O_RDONLY);
+	data.map = get_lines_map(fd);
+	int height_win;
+	int width_win;
+	if (!parsing_map(data.map))
+		return (0);
+	height_win = get_amount_lines(data.map) * 32;
+	width_win = ft_strlen(data.map[0]) * 32;
 	data.mlx = mlx_init();
-	data.mlx_win = mlx_new_window(data.mlx, 920, 480, "So Long");
+	data.mlx_win = mlx_new_window(data.mlx, width_win, height_win, "So Long");
 	init_images(&data);
-	data.avatar.x = 920 / 2;
-	data.avatar.y = 480 / 2;
+	data.avatar.x = width_win / 2;
+	data.avatar.y = height_win / 2;
 	data.avatar.width = 1;
 	data.avatar.height = 1;
 	print_background(&data.canva);

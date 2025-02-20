@@ -14,6 +14,7 @@ SRCS =	main/main.c							\
 			map_check/is_retangular_map.c	\
 			map_check/number_of_elements.c	\
 			map_check/parsing_map.c			\
+			map_check/len_map.c					\
 			keys/keys_hook.c			\
 			keys/close_win.c						\
 			print_elements/print_avatar.c	\
