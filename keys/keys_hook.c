@@ -1,8 +1,7 @@
 #include "../so_long.h"
 
-int	move_player(int key_code, t_data *param)
+int	keys_hook(int key_code, t_data *param)
 {
-
 	if (key_code == 115)
 	{
 		param->avatar.y += 10;
@@ -36,8 +35,11 @@ int	move_player(int key_code, t_data *param)
 			param->avatar.width = 1;
 	}
 	print_background(&param->canva);
-		// print_image(&param->canva, &param->player, param->avatar.x, param->avatar.y);
-	print_avatar(&param->canva, *param);
+	// print_walls(&param->canva, param->wall, param->avatar, fd);
+	// print_image(&param->canva, &param->player, param->avatar.x, param->avatar.y);
+	print_avatar(&param->canva, param->player, param->avatar);
 	mlx_put_image_to_window(param->mlx, param->mlx_win, param->canva.img, 0, 0);
+	if (key_code == 65307)
+		close_win(param);
 	return (0);
 }

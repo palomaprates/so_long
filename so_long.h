@@ -16,30 +16,25 @@ typedef struct	s_image {
 	int		height;
 }				t_image;
 
-typedef struct s_avatar_sprite{
+typedef struct s_sprite{
 	int	x;
 	int	y;
 	int	width;
 	int	height;
-}						t_avatar_sprite;
+}						t_sprite;
 
 typedef struct	s_data {
 	void	*mlx;
 	void	*mlx_win;
+	char	**map;
 	t_image	background;
 	t_image	player;
+	t_image	wall;
 	t_image	canva;
-	t_avatar_sprite	avatar;
+	t_sprite	avatar;
+	t_sprite	wall_sprite;
 } 				t_data;
 
-
-
-	// void	*mlx;
-	// void	*mlx_win;
-	// t_image	background;
-	// t_image	player;
-	// t_image	canva;
-	// t_avatar_sprite	avatar;
 
 
 	enum {
@@ -82,7 +77,7 @@ int	number_of_elements(char **lines_map, char c);
 
 int	parsing_map(char **lines_map);
 
-void print_background();
+void print_background(t_image *canva);
 
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
 
@@ -90,10 +85,18 @@ int	get_pixel_canva(t_image *image, int x, int y);
 
 void	print_image(t_image *canva, t_image *image, int x, int y);
 
-void	print_avatar(t_image *canva, t_data data);
+void	print_avatar(t_image *canva, t_image player, t_sprite avatar);
 
-int	move_player(int key_code, t_data *param);
+// int	move_player(int key_code, t_data *param);
+int	keys_hook(int key_code, t_data *param);
 
+// void	print_walls(t_image *canva, t_image	wall, int fd);
+void	print_walls(t_image *canva, t_image	wall, t_sprite wall_sprite, int fd);
 
+int	close_win(t_data *param);
+
+void	destroy_images(t_data *data);
+
+void	init_images(t_data *data);
 
 #endif
