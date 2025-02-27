@@ -47,6 +47,14 @@ typedef struct	s_data {
 	ON_DESTROY = 17
 };
 
+enum {
+	WALL = '1',
+	BACKGROUND = '0',
+	COINS = 'C',
+	EXIT = 'E',
+	PLAYER = 'P',
+};
+
 /*===============UTILS=============*/
 
 char	**ft_split(char const *s, char c);
@@ -93,7 +101,7 @@ int	keys_hook(int key_code, t_data *param);
 
 // void	print_walls(t_image *canva, t_image wall, t_sprite wall_sprite, t_data *data);
 // void	print_walls(t_image *canva, t_image wall, t_sprite wall_sprite, char **map);
-void	print_walls(t_image *canva, t_data *data);
+void	print_element(t_image *canva, char **map, char c, t_image *img);
 
 
 int	close_win(t_data *param);

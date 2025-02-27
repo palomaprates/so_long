@@ -17,10 +17,10 @@ SRCS =	main/main.c							\
 			map_check/len_map.c					\
 			keys/keys_hook.c			\
 			keys/close_win.c						\
-			print_elements/print_avatar.c	\
-			print_elements/print_background.c \
-			print_elements/print_image.c		\
-			print_elements/print_walls.c		\
+			print/print_avatar.c	\
+			print/print_background.c \
+			print/print_image.c		\
+			print/print_element.c		\
 			get_pixel_canva.c						\
 			my_mlx_pixel_put.c					\
 			image_control/destroy_images.c	\
