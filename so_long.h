@@ -31,8 +31,9 @@ typedef struct	s_data {
 	t_image	player;
 	t_image	wall;
 	t_image	canva;
+	t_image	coins;
+	t_image	exit;
 	t_sprite	avatar;
-	t_sprite	wall_sprite;
 } 				t_data;
 
 
@@ -87,8 +88,6 @@ int	parsing_map(char **lines_map);
 
 int	len_map(char **lines_map);
 
-void print_background(t_image *canva);
-
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
 
 int	get_pixel_canva(t_image *image, int x, int y);
@@ -99,10 +98,7 @@ void	print_avatar(t_image *canva, t_image player, t_sprite avatar);
 
 int	keys_hook(int key_code, t_data *param);
 
-// void	print_walls(t_image *canva, t_image wall, t_sprite wall_sprite, t_data *data);
-// void	print_walls(t_image *canva, t_image wall, t_sprite wall_sprite, char **map);
 void	print_element(t_image *canva, char **map, char c, t_image *img);
-
 
 int	close_win(t_data *param);
 
