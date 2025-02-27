@@ -8,8 +8,7 @@ char	**get_lines_map(int fd)
 	char *map;
 	char **lines_map;
 	map = NULL;
-
-		str = get_next_line(fd);
+	str = get_next_line(fd);
 	while(str)
 	{
 		map = ft_strjoin(map, str);

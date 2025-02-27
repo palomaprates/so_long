@@ -10,7 +10,6 @@ int	is_map_enclosed(char **lines_map)
 	j = 0;
 	last = ft_strlen(lines_map[i]);
 	last_line = get_amount_lines(lines_map) - 1;
-	printf("last: %d last line: %d\n", last, last_line);
 	while(j < last)
 	{
 		if (lines_map[0][j] != '1' || lines_map[last_line][j] != '1')

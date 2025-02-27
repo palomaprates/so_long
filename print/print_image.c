@@ -13,7 +13,7 @@ void	print_image(t_image *canva, t_image *image, int x, int y)
 		while (index_x < image->width)
 		{
 			pixel = get_pixel_canva(image, index_x, index_y);
-			if (pixel != -16777216)
+			if (pixel != -16777216 && pixel != 0)
 				my_mlx_pixel_put(canva, (x + index_x), (y + index_y), pixel);
 			index_x++;
 		}

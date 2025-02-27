@@ -25,7 +25,6 @@ int	main(int argc, char *argv[])
 	data.avatar.y = height_win / 2;
 	data.avatar.width = 1;
 	data.avatar.height = 1;
-	print_background(&data.canva);
 	mlx_put_image_to_window(data.mlx, data.mlx_win, data.canva.img, 0, 0);
 	mlx_hook(data.mlx_win, ON_KEYDOWN, 1L<<0, keys_hook, &data);
 	mlx_hook(data.mlx_win, ON_DESTROY, 1L<<2, destroy_hook, &data);
