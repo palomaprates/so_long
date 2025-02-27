@@ -18,7 +18,6 @@ SRCS =	main/main.c							\
 			keys/keys_hook.c			\
 			keys/close_win.c						\
 			print/print_avatar.c	\
-			print/print_background.c \
 			print/print_image.c		\
 			print/print_element.c		\
 			get_pixel_canva.c						\
