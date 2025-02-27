@@ -16,8 +16,8 @@ int	main(int argc, char *argv[])
 	int width_win;
 	if (!parsing_map(data.map))
 		return (0);
-	height_win = get_amount_lines(data.map) * 32;
-	width_win = ft_strlen(data.map[0]) * 32;
+	height_win = get_amount_lines(data.map) * 20;
+	width_win = ft_strlen(data.map[0]) * 20;
 	data.mlx = mlx_init();
 	data.mlx_win = mlx_new_window(data.mlx, width_win, height_win, "So Long");
 	init_images(&data);

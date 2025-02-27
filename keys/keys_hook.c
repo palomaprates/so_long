@@ -34,10 +34,14 @@ int	keys_hook(int key_code, t_data *param)
 		if (param->avatar.width >= 60)
 			param->avatar.width = 1;
 	}
-	print_background(&param->canva);
 	// print_image(&param->canva, &param->player, param->avatar.x, param->avatar.y);
+	print_element(&param->canva, param->map, BACKGROUND, &param->background);
+	print_element(&param->canva, param->map, EXIT, &param->background);
+	print_element(&param->canva, param->map, PLAYER, &param->background);
+	print_element(&param->canva, param->map, COINS, &param->background);
+	print_element(&param->canva, param->map, WALL, &param->wall);
 	print_avatar(&param->canva, param->player, param->avatar);
-	print_walls(&param->canva, param);
+	// print_element(&param->canva, param->map, COINS, &param->wall);
 	// print_walls(&param->canva, param->wall, param->avatar, param->map);
 
 	mlx_put_image_to_window(param->mlx, param->mlx_win, param->canva.img, 0, 0);
