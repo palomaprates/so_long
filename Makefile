@@ -15,10 +15,12 @@ SRCS =	main/main.c							\
 			map_check/number_of_elements.c	\
 			map_check/parsing_map.c			\
 			map_check/len_map.c					\
+			map_check/get_elements_position.c \
 			keys/keys_hook.c			\
 			keys/close_win.c						\
 			print/print_avatar.c	\
 			print/print_image.c		\
+			print/print_exit.c					\
 			print/print_element.c		\
 			get_pixel_canva.c						\
 			my_mlx_pixel_put.c					\

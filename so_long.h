@@ -21,6 +21,7 @@ typedef struct s_sprite{
 	int	y;
 	int	width;
 	int	height;
+	t_image	image;
 }						t_sprite;
 
 typedef struct	s_data {
@@ -28,12 +29,12 @@ typedef struct	s_data {
 	void	*mlx_win;
 	char	**map;
 	t_image	background;
-	t_image	player;
 	t_image	wall;
 	t_image	canva;
 	t_image	coins;
-	t_image	exit;
-	t_sprite	avatar;
+	t_sprite	player;
+	t_sprite	enemy;
+	t_sprite	exit;
 } 				t_data;
 
 
@@ -84,9 +85,12 @@ int	is_retangular_map(char **lines_map);
 
 int	number_of_elements(char **lines_map, char c);
 
+int	get_elements_position(char **map, char c);
+
 int	parsing_map(char **lines_map);
 
 int	len_map(char **lines_map);
+
 
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
 
@@ -94,7 +98,8 @@ int	get_pixel_canva(t_image *image, int x, int y);
 
 void	print_image(t_image *canva, t_image *image, int x, int y);
 
-void	print_avatar(t_image *canva, t_image player, t_sprite avatar);
+// void	print_avatar(t_image *canva, t_image player, t_sprite avatar);
+void	print_avatar(t_image *canva, t_sprite player);
 
 int	keys_hook(int key_code, t_data *param);
 
@@ -105,5 +110,7 @@ int	close_win(t_data *param);
 void	destroy_images(t_data *data);
 
 void	init_images(t_data *data);
+
+void	print_exit(t_image *canva, t_image player, t_sprite avatar);
 
 #endif
