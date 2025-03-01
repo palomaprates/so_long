@@ -20,7 +20,6 @@ SRCS =	main/main.c							\
 			keys/close_win.c						\
 			print/print_avatar.c	\
 			print/print_image.c		\
-			print/print_exit.c					\
 			print/print_element.c		\
 			get_pixel_canva.c						\
 			my_mlx_pixel_put.c					\

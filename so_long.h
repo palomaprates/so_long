@@ -57,7 +57,7 @@ enum {
 	PLAYER = 'P',
 };
 
-/*===============UTILS=============*/
+/*===================================UTILS=======================================*/
 
 char	**ft_split(char const *s, char c);
 
@@ -73,9 +73,11 @@ void	to_clear_buffer(char *s1);
 
 int	to_find_newline(char *str);
 
-/*=============MAP CHECK============*/
+/*==================================MAP CHECK===================================*/
 
 int	get_amount_lines(char **lines_map);
+
+int	get_elements_position(char **map, char c);
 
 char	**get_lines_map(int fd);
 
@@ -83,34 +85,34 @@ int	is_map_enclosed(char **lines_map);
 
 int	is_retangular_map(char **lines_map);
 
-int	number_of_elements(char **lines_map, char c);
+int	len_map(char **lines_map);
 
-int	get_elements_position(char **map, char c);
+int	number_of_elements(char **lines_map, char c);
 
 int	parsing_map(char **lines_map);
 
-int	len_map(char **lines_map);
-
-
-void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
-
-int	get_pixel_canva(t_image *image, int x, int y);
+/*====================================PRINT===================================*/
 
 void	print_image(t_image *canva, t_image *image, int x, int y);
 
-// void	print_avatar(t_image *canva, t_image player, t_sprite avatar);
 void	print_avatar(t_image *canva, t_sprite player);
-
-int	keys_hook(int key_code, t_data *param);
 
 void	print_element(t_image *canva, char **map, char c, t_image *img);
 
-int	close_win(t_data *param);
+/*====================================IMAGE CONTROL===================================*/
 
 void	destroy_images(t_data *data);
 
 void	init_images(t_data *data);
 
-void	print_exit(t_image *canva, t_image player, t_sprite avatar);
+/*=========================================KEYS========================================*/
+
+int	keys_hook(int key_code, t_data *param);
+
+int	close_win(t_data *param);
+
+void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
+
+int	get_pixel_canva(t_image *image, int x, int y);
 
 #endif
