@@ -31,7 +31,6 @@ typedef struct	s_data {
 	void	*mlx;
 	void	*mlx_win;
 	char	**map;
-	int	limit;
 	t_image	background;
 	t_image	wall;
 	t_image	canva;
@@ -81,8 +80,6 @@ int	to_find_newline(char *str);
 
 int	get_amount_lines(char **lines_map);
 
-int	get_elements_position(char **map, char c);
-
 char	**get_lines_map(int fd);
 
 int	is_map_enclosed(char **lines_map);
@@ -108,6 +105,8 @@ void	print_element(t_image *canva, char **map, char c, t_image *img);
 void	destroy_images(t_data *data);
 
 void	init_images(t_data *data);
+
+void	set_image(t_image *image, void *mlx, char *source, int *endian);
 
 /*=========================================KEYS========================================*/
 

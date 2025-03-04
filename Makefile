@@ -15,7 +15,6 @@ SRCS =	main/main.c							\
 			map_check/number_of_elements.c	\
 			map_check/parsing_map.c			\
 			map_check/len_map.c					\
-			map_check/get_elements_position.c \
 			keys/keys_hook.c			\
 			keys/close_win.c						\
 			print/print_avatar.c	\
@@ -25,6 +24,7 @@ SRCS =	main/main.c							\
 			my_mlx_pixel_put.c					\
 			image_control/destroy_images.c	\
 			image_control/init_images.c		\
+			image_control/set_image.c	\
 			touch_element.c						\
 			
 OBJS = $(SRCS:.c=.o)
