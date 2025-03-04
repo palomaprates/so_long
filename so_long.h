@@ -86,8 +86,6 @@ int	is_map_enclosed(char **lines_map);
 
 int	is_retangular_map(char **lines_map);
 
-int	len_map(char **lines_map);
-
 int	number_of_elements(char **lines_map, char c);
 
 int	parsing_map(char **lines_map);
