@@ -3,10 +3,7 @@
 int	parsing_map(char **lines_map)
 {
 	if (!is_retangular_map(lines_map))
-	{
-		printf("mapa não é retangular");
-		return (0);
-	}
+		return (printf("mapa não é retangular"));
 	if (!*lines_map)
 		return (0);
 	if (!is_map_enclosed(lines_map))
