@@ -1,6 +1,5 @@
 #include "../so_long.h"
 
-
 int	destroy_hook(t_data *data)
 {
 	close_win(data);
