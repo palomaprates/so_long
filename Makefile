@@ -25,6 +25,7 @@ SRCS =	main/main.c							\
 			my_mlx_pixel_put.c					\
 			image_control/destroy_images.c	\
 			image_control/init_images.c		\
+			touch_element.c						\
 			
 OBJS = $(SRCS:.c=.o)
 

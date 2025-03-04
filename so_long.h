@@ -6,6 +6,9 @@
 # include <stdio.h>
 # include "mlx.h"
 
+# define PLAYER_VELOCITY 20
+# define PLAYER_MARGIN 10
+
 typedef struct	s_image {
 	void	*img;
 	char	*addr;
@@ -28,6 +31,7 @@ typedef struct	s_data {
 	void	*mlx;
 	void	*mlx_win;
 	char	**map;
+	int	limit;
 	t_image	background;
 	t_image	wall;
 	t_image	canva;
@@ -114,5 +118,7 @@ int	close_win(t_data *param);
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
 
 int	get_pixel_canva(t_image *image, int x, int y);
+
+char	*touch_element(int player_x, int player_y, char **map);
 
 #endif

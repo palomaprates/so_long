@@ -21,14 +21,15 @@ int	main(int argc, char *argv[])
 	data.mlx = mlx_init();
 	data.mlx_win = mlx_new_window(data.mlx, width_win, height_win, "So Long");
 	init_images(&data);
-	data.player.x = width_win / 2;
-	data.player.y = height_win / 2;
+	data.player.x = 0 + PLAYER_MARGIN;
+	data.player.y = 0 + PLAYER_MARGIN;
 	data.player.width = 1;
 	data.player.height = 1;
 	data.exit.x = 2 * 20;
 	data.exit.y = 2 * 20;
 	data.exit.width = 1;
 	data.exit.height = 1;
+	data.limit = 0;
 	mlx_put_image_to_window(data.mlx, data.mlx_win, data.canva.img, 0, 0);
 	mlx_hook(data.mlx_win, ON_KEYDOWN, 1L<<0, keys_hook, &data);
 	mlx_hook(data.mlx_win, ON_DESTROY, 1L<<2, destroy_hook, &data);
