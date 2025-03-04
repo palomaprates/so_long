@@ -15,16 +15,19 @@ SRCS =	main/main.c							\
 			map_check/number_of_elements.c	\
 			map_check/parsing_map.c			\
 			map_check/len_map.c					\
-			keys/keys_hook.c			\
-			keys/close_win.c						\
+			game_control/keys_hook.c			\
+			game_control/close_win.c						\
+			game_control/game_images.c				\
 			print/print_avatar.c	\
 			print/print_image.c		\
 			print/print_element.c		\
+			print/print_exit.c			\
 			get_pixel_canva.c						\
 			my_mlx_pixel_put.c					\
 			image_control/destroy_images.c	\
 			image_control/init_images.c		\
 			image_control/set_image.c	\
+			game_movements/movements.c			\
 			touch_element.c						\
 			
 OBJS = $(SRCS:.c=.o)

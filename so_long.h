@@ -100,6 +100,8 @@ void	print_avatar(t_image *canva, t_sprite player);
 
 void	print_element(t_image *canva, char **map, char c, t_image *img);
 
+void	print_exit(t_data *param);
+
 /*====================================IMAGE CONTROL===================================*/
 
 void	destroy_images(t_data *data);
@@ -108,11 +110,13 @@ void	init_images(t_data *data);
 
 void	set_image(t_image *image, void *mlx, char *source, int *endian);
 
-/*=========================================KEYS========================================*/
+/*=========================================GAME CONTROL========================================*/
 
 int	keys_hook(int key_code, t_data *param);
 
 int	close_win(t_data *param);
+
+void	game_images(t_data *param);
 
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
 
@@ -120,4 +124,15 @@ int	get_pixel_canva(t_image *image, int x, int y);
 
 char	*touch_element(int player_x, int player_y, char **map);
 
+
+
+void	move_up(int key_code, t_data *param);
+
+void	move_down(int key_code, t_data *param);
+
+void	move_left(int key_code, t_data *param);
+
+void	move_right(int key_code, t_data *param);
+
+void	movements(int key_code, t_data *param);
 #endif
