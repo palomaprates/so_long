@@ -12,7 +12,7 @@ void	print_element(t_image *canva, char **map, char c, t_image *img)
 		while(map[line][length])
 		{
 				if (map[line][length] == c)
-						print_image(canva, img, (length * 20), (line * 20));
+						print_image(canva, img, (length * SIZE), (line * SIZE));
 				length++;
 		}
 		line++;

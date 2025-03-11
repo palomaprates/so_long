@@ -6,14 +6,14 @@ void	print_exit(t_data *param)
 	if (!number_of_elements(param->map, COINS))
 	{
 		if (!i) param->exit.width = -30;
-		param->exit.height = 2;
+			param->exit.height = 2;
 		while (i < 4)
 		{
-			param->exit.x = 10 - i * 2;
-			param->exit.y = 10;
+			param->exit.x -= i * 2;
+			// param->exit.y = 10;
 			param->exit.width += 30;
 			if (param->exit.width >= 130)
-			param->exit.width = 1;
+				param->exit.width = 1;
 			print_element(&param->canva, param->map, EXIT, &param->background);
 			print_avatar(&param->canva, param->exit);
 			print_avatar(&param->canva, param->player);

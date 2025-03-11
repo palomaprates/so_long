@@ -8,15 +8,19 @@ SRCS =	main/main.c							\
 			utils/get_next_line.c			\
 			utils/to_clear_buffer.c			\
 			utils/to_find_newline.c			\
+			utils/copy_map.c					\
+			utils/ft_strdup.c					\
 			map_check/get_amount_lines.c	\
 			map_check/get_lines_map.c		\
 			map_check/is_map_enclosed.c	\
 			map_check/is_retangular_map.c	\
 			map_check/number_of_elements.c	\
 			map_check/parsing_map.c			\
+			map_check/check_path.c				\
 			game_control/keys_hook.c			\
 			game_control/close_win.c						\
 			game_control/game_images.c				\
+			game_control/get_player_position.c	\
 			print/print_avatar.c	\
 			print/print_image.c		\
 			print/print_element.c		\
