@@ -28,8 +28,8 @@ int	check_path(t_data data, int x, int line)
 	map.collectibles = data.collectibles;
 	printf("map collectibles %d\n", map.collectibles);
 	map.flag = 0;
-	x = x / PLAYER_VELOCITY;
-	line = line / PLAYER_VELOCITY;
+	x = x / SQUARE_SIZE;
+	line = line / SQUARE_SIZE;
 	dfs(&map, x + 1, line);
 	dfs(&map, x - 1, line);
 	dfs(&map, x, line + 1);

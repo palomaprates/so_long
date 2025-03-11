@@ -13,13 +13,13 @@ void	get_avatar_position(t_sprite *player, t_sprite *exit, char **map)
 		{
 			if (map[lines][len] == PLAYER)
 			{
-				player->x = len * PLAYER_VELOCITY + PLAYER_MARGIN;
-				player->y = lines * PLAYER_VELOCITY + PLAYER_MARGIN;
+				player->x = len * SQUARE_SIZE + PLAYER_MARGIN;
+				player->y = lines * SQUARE_SIZE + PLAYER_MARGIN;
 			}
 			if (map[lines][len] == EXIT)
 			{
-				exit->x = len * PLAYER_VELOCITY + PLAYER_MARGIN;
-				exit->y = lines * PLAYER_VELOCITY + PLAYER_MARGIN;
+				exit->x = len * SQUARE_SIZE;
+				exit->y = lines * SQUARE_SIZE + EXIT_MARGIN;
 				return ;
 			}
 			len++;

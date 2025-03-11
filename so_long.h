@@ -6,10 +6,10 @@
 # include <stdio.h>
 # include "mlx.h"
 
-# define PLAYER_VELOCITY 20
+# define SQUARE_SIZE 20
 # define PLAYER_MARGIN 10
+# define EXIT_MARGIN -10
 # define SIZE 20
-# define BIT_SIZE 32
 
 typedef struct	s_image {
 	void	*img;
