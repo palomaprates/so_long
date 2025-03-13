@@ -8,7 +8,7 @@
 
 # define SQUARE_SIZE 20
 # define PLAYER_MARGIN 10
-# define EXIT_MARGIN -10
+# define EXIT_MARGIN 10
 # define SIZE 20
 
 typedef struct	s_image {
@@ -116,6 +116,7 @@ void	print_avatar(t_image *canva, t_sprite player);
 
 void	print_element(t_image *canva, char **map, char c, t_image *img);
 
+// void	print_exit(t_image *canva, t_image *image, int x, int y);
 void	print_exit(t_data *param);
 
 /*====================================IMAGE CONTROL===================================*/
