@@ -8,5 +8,5 @@ void	init_images(t_data *data)
 	set_image(&data->player.image, data->mlx, "./images/peach.xpm", &data->player.image.endian);
 	set_image(&data->wall, data->mlx, "./images/walls.xpm", &data->wall.endian);
 	set_image(&data->coins, data->mlx, "./images/coins.xpm", &data->coins.endian);
-	set_image(&data->exit.image, data->mlx, "./images/exit.xpm", &data->exit.image.endian);
+	set_image(&data->exit.image, data->mlx, "./images/mario.xpm", &data->exit.image.endian);
 }
