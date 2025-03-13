@@ -8,7 +8,6 @@ t_map	copy_map(t_data data)
 	new_map.map = malloc(sizeof(char *) * (get_amount_lines(data.map) + 1));
 	if (!new_map.map)
 		return (new_map);
-	
 	i = 0;
 	while (data.map[i])
 	{

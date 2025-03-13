@@ -3,9 +3,9 @@
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*new;
-	int		totalsize;
-	int		i;
-	int		j;
+	int	totalsize;
+	int	i;
+	int	j;
 
 	i = 0;
 	totalsize = ft_strlen(s1) + ft_strlen(s2);
