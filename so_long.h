@@ -4,8 +4,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# include "mlx.h"
-
+# include "minilibx-linux/mlx.h"
+# include "ft_printf/ft_printf.h"
 # define SQUARE_SIZE 20
 # define PLAYER_MARGIN 10
 # define EXIT_MARGIN 10
@@ -106,8 +106,6 @@ int	parsing_map(t_data data);
 
 int	check_path(t_data data, int x, int line);
 
-static void	dfs(t_map *map, int x, int line);
-
 /*====================================PRINT===================================*/
 
 void	print_image(t_image *canva, t_image *image, int x, int y);
@@ -116,7 +114,6 @@ void	print_avatar(t_image *canva, t_sprite player);
 
 void	print_element(t_image *canva, char **map, char c, t_image *img);
 
-// void	print_exit(t_image *canva, t_image *image, int x, int y);
 void	print_exit(t_data *param);
 
 /*====================================IMAGE CONTROL===================================*/

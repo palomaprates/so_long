@@ -18,6 +18,7 @@ void	move_up(int key_code, t_data *param)
 void	move_down(int key_code, t_data *param)
 {
 	char	*next_pos;
+
 	if (key_code == 115)
 	{
 		next_pos = touch_element(param->player.x, param->player.y + SQUARE_SIZE, param->map);

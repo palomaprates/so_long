@@ -1,4 +1,4 @@
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS =	main/main.c							\
 			utils/ft_split.c					\
@@ -33,22 +33,30 @@ SRCS =	main/main.c							\
 			game_movements/movements.c			\
 			touch_element.c						\
 			
+FT_PRINTF_DIR = ft_printf
+FT_PRINTF_LIB = $(FT_PRINTF_DIR)/libftprintf.a
+
 OBJS = $(SRCS:.c=.o)
 
 NAME = so_long
 
 all: $(NAME) 
 
-%.o: %.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+$(FT_PRINTF_LIB):
+	@make -s -C $(FT_PRINTF_DIR)
 
-$(NAME): $(OBJS)
-	$(CC) $(OBJS) -Lmlx -lmlx -L/opt/X11/lib -lXext -lX11 -framework OpenGL -framework AppKit -o $(NAME)
+%.o: %.c
+	$(CC) $(CFLAGS) -I$(FT_PRINTF_DIR) -I/usr/include -Imlx_linux -O3 -c $< -o $@
+
+$(NAME): $(OBJS) $(FT_PRINTF_LIB)
+	$(CC) $(OBJS) $(FT_PRINTF_LIB) minilibx-linux/libmlx_Linux.a -L/usr/lib -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)
+	make -C $(FT_PRINTF_DIR) clean
 
 fclean: clean
 	rm -rf $(NAME)
+	make -C $(FT_PRINTF_DIR) fclean
 
 re: fclean all

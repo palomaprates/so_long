@@ -27,8 +27,8 @@ int	check_path(t_data data, int x, int line)
 	map.flag = 0;
 	x = x / SQUARE_SIZE + 1;
 	line = line / SQUARE_SIZE + 1;
-	printf("check path x %d\n", x);
-	printf("check path line %d\n", line);
+	ft_printf("check path x %d\n", x);
+	ft_printf("check path line %d\n", line);
 	dfs(&map, x + 1, line);
 	dfs(&map, x - 1, line);
 	dfs(&map, x, line + 1);

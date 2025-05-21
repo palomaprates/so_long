@@ -7,6 +7,7 @@ int	destroy_hook(t_data *data)
 }
 int	main(int argc, char *argv[])
 {
+	(void)argc;
 	int	fd;
 	int	height_win;
 	int	width_win;
@@ -24,7 +25,7 @@ int	main(int argc, char *argv[])
 	data.collectibles = number_of_elements(data.map, COINS);
 	get_avatar_position(&data.player, &data.exit, data.map);
 	if (!check_path(data, data.player.x, data.player.y))
-		return (printf("There are an invalid path\n"), 0);
+		return (ft_printf("There are an invalid path\n"), 0);
 	data.player.width = 1;
 	data.player.height = 1;
 	data.exit.width = 1;
