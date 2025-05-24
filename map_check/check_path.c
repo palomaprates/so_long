@@ -1,5 +1,20 @@
 #include "../so_long.h"
 
+void	free_map(t_map *map_struct)
+{
+	int i = 0;
+
+	if (!map_struct || !map_struct->map)
+		return;
+	while (map_struct->map[i])
+	{
+		free(map_struct->map[i]);
+		i++;
+	}
+	free(map_struct->map);
+	map_struct->map = NULL;
+}
+
 static void	dfs(t_map *map, int x, int line)
 {
 	if (map->flag && map->collectibles == 0)
@@ -22,19 +37,18 @@ static void	dfs(t_map *map, int x, int line)
 int	check_path(t_data data, int x, int line)
 {
 	t_map	map;
+	int result;
+
 	map = copy_map(data);
 	map.collectibles = data.collectibles;
 	map.flag = 0;
 	x = x / SQUARE_SIZE + 1;
 	line = line / SQUARE_SIZE + 1;
-	ft_printf("check path x %d\n", x);
-	ft_printf("check path line %d\n", line);
 	dfs(&map, x + 1, line);
 	dfs(&map, x - 1, line);
 	dfs(&map, x, line + 1);
 	dfs(&map, x, line - 1);
-	if (map.flag && map.collectibles == 0)
-		return (1);
-	else
-		return (0);
+	result = (map.flag && map.collectibles == 0);
+	free_map(&map);
+	return (result);
 }

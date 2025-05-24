@@ -5,6 +5,9 @@ t_map	copy_map(t_data data)
 	t_map new_map;
 	int i;
 
+	new_map.map = NULL;
+	new_map.collectibles = 0;
+	new_map.flag = 0;
 	new_map.map = malloc(sizeof(char *) * (get_amount_lines(data.map) + 1));
 	if (!new_map.map)
 		return (new_map);

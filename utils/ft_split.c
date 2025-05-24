@@ -6,6 +6,7 @@ static void	ft_free(char **new_str, int j)
 		free(new_str[j--]);
 	free(new_str);
 }
+
 static int	count_words(char const *s, char c)
 {
 	int	i;

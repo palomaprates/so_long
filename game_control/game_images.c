@@ -16,6 +16,6 @@ void	game_images(t_data *param)
 	print_avatar(&param->canva, param->player);
 	print_element(&param->canva, param->map, WALL, &param->wall);
 	if (*next_pos == EXIT && !number_of_elements(param->map, COINS))
-			exit(1);
+		cleanup_and_exit(param);
 	mlx_put_image_to_window(param->mlx, param->mlx_win, param->canva.img, 0, 0);
 }
