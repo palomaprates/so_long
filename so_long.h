@@ -129,8 +129,6 @@ void	set_image(t_image *image, void *mlx, char *source, int *endian);
 
 int	keys_hook(int key_code, t_data *param);
 
-int	close_win(t_data *param);
-
 void cleanup_and_exit(t_data *data);
 
 void cleanup(t_data *data);

@@ -1,17 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   movements.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprates- <pprates-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/24 18:59:18 by pprates-          #+#    #+#             */
+/*   Updated: 2025/05/24 19:02:45 by pprates-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 void	move_up(int key_code, t_data *param)
 {
 	char	*next_pos;
+
 	if (key_code == 119)
 	{
-		next_pos = touch_element(param->player.x, param->player.y - SQUARE_SIZE, param->map);
+		next_pos = touch_element(param->player.x, \
+		param->player.y - SQUARE_SIZE, param->map);
 		if (*next_pos != WALL)
 			param->player.y -= SQUARE_SIZE;
 		param->player.height = 66;
 		param->player.width += 30;
 		if (param->player.width >= 60)
-		param->player.width = 1;
+			param->player.width = 1;
 	}
 }
 
@@ -21,7 +35,8 @@ void	move_down(int key_code, t_data *param)
 
 	if (key_code == 115)
 	{
-		next_pos = touch_element(param->player.x, param->player.y + SQUARE_SIZE, param->map);
+		next_pos = touch_element(param->player.x, \
+		param->player.y + SQUARE_SIZE, param->map);
 		if (*next_pos != WALL)
 			param->player.y += SQUARE_SIZE;
 		param->player.height = 98;
@@ -29,27 +44,32 @@ void	move_down(int key_code, t_data *param)
 			param->player.width = 1;
 	}
 }
+
 void	move_left(int key_code, t_data *param)
 {
 	char	*next_pos;
+
 	if (key_code == 97)
 	{
-		next_pos = touch_element(param->player.x - SQUARE_SIZE, param->player.y, param->map);
+		next_pos = touch_element(param->player.x - SQUARE_SIZE, \
+		param->player.y, param->map);
 		if (*next_pos != WALL)
-		param->player.x -= SQUARE_SIZE;
+			param->player.x -= SQUARE_SIZE;
 		param->player.height = 34;
 		param->player.width += 30;
 		if (param->player.width >= 60)
-		param->player.width = 1;
+			param->player.width = 1;
 	}
 }
 
 void	move_right(int key_code, t_data *param)
 {
 	char	*next_pos;
+
 	if (key_code == 100)
 	{
-		next_pos = touch_element(param->player.x + SQUARE_SIZE, param->player.y, param->map);
+		next_pos = touch_element(param->player.x + SQUARE_SIZE, \
+		param->player.y, param->map);
 		if (*next_pos != WALL)
 			param->player.x += SQUARE_SIZE;
 		param->player.height = 1;
@@ -58,6 +78,7 @@ void	move_right(int key_code, t_data *param)
 			param->player.width = 1;
 	}
 }
+
 void	movements(int key_code, t_data *param)
 {
 	move_down(key_code, param);

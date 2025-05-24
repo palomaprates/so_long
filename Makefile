@@ -18,7 +18,6 @@ SRCS =	main/main.c							\
 			map_check/parsing_map.c			\
 			map_check/check_path.c				\
 			game_control/keys_hook.c			\
-			game_control/close_win.c						\
 			game_control/game_images.c				\
 			game_control/get_avatar_position.c	\
 			game_control/cleanup_and_exit.c				\

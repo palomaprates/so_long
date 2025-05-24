@@ -6,7 +6,7 @@
 /*   By: pprates- <pprates-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 17:36:49 by pprates-          #+#    #+#             */
-/*   Updated: 2025/05/24 18:04:41 by pprates-         ###   ########.fr       */
+/*   Updated: 2025/05/24 18:56:02 by pprates-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	free_lines_map(char **map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!map)
@@ -41,7 +41,7 @@ void	cleanup(t_data *data)
 		free_lines_map(data->map);
 }
 
-void    cleanup_and_exit(t_data *data)
+void	cleanup_and_exit(t_data *data)
 {
 	cleanup(data);
 	if (data->mlx)
