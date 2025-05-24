@@ -41,6 +41,8 @@ typedef struct	s_data {
 	void	*mlx_win;
 	char **map;
 	int		collectibles;
+	int	height_win;
+	int width_win;
 	t_image	background;
 	t_image	wall;
 	t_image	canva;

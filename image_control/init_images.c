@@ -2,7 +2,7 @@
 
 void	init_images(t_data *data)
 {
-	data->canva.img = mlx_new_image(data->mlx, 920, 480);
+	data->canva.img = mlx_new_image(data->mlx, data->width_win, data->height_win);
 	data->canva.addr = mlx_get_data_addr(data->canva.img, &data->canva.bits_per_pixel, &data->canva.line_length, &data->canva.endian);
 	set_image(&data->background, data->mlx, "./images/background.xpm", &data->background.endian);
 	set_image(&data->player.image, data->mlx, "./images/peach.xpm", &data->player.image.endian);

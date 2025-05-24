@@ -10,9 +10,8 @@ int	main(int argc, char *argv[])
 	(void)argc;
 	int	fd;
 	int	height_win;
-	int	width_win;
 	t_data	data;
-
+	int i = 0;
 	fd = open(argv[1], O_RDONLY);
 	data.map = get_lines_map(fd);
 	close(fd);
@@ -21,10 +20,10 @@ int	main(int argc, char *argv[])
 		free_lines_map(data.map);
 		return (0);
 	}
-	height_win = get_amount_lines(data.map) * SIZE;
-	width_win = ft_strlen(data.map[0]) * SIZE;
+	data.height_win = get_amount_lines(data.map) * SIZE;
+	data.width_win = ft_strlen(data.map[0]) * SIZE;
 	data.mlx = mlx_init();
-	data.mlx_win = mlx_new_window(data.mlx, width_win, height_win, "So Long");
+	data.mlx_win = mlx_new_window(data.mlx, data.width_win, data.height_win, "So Long");
 	init_images(&data);
 	data.collectibles = number_of_elements(data.map, COINS);
 	get_avatar_position(&data.player, &data.exit, data.map);
