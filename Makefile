@@ -21,6 +21,7 @@ SRCS =	main/main.c							\
 			game_control/close_win.c						\
 			game_control/game_images.c				\
 			game_control/get_avatar_position.c	\
+			game_control/cleanup_and_exit.c				\
 			print/print_avatar.c	\
 			print/print_image.c		\
 			print/print_element.c		\
