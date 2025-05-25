@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprates- <pprates-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/25 13:00:41 by pprates-          #+#    #+#             */
+/*   Updated: 2025/05/25 13:01:00 by pprates-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 static void	ft_free(char **new_str, int j)
@@ -23,6 +35,7 @@ static int	count_words(char const *s, char c)
 	}
 	return (j);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**new_str;

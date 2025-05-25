@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprates- <pprates-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/25 13:01:26 by pprates-          #+#    #+#             */
+/*   Updated: 2025/05/25 13:01:46 by pprates-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*new;
-	int	totalsize;
-	int	i;
-	int	j;
+	int		totalsize;
+	int		i;
+	int		j;
 
 	i = 0;
 	totalsize = ft_strlen(s1) + ft_strlen(s2);

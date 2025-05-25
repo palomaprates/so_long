@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_path.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprates- <pprates-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/25 12:47:03 by pprates-          #+#    #+#             */
+/*   Updated: 2025/05/25 12:48:11 by pprates-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 void	free_map(t_map *map_struct)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	if (!map_struct || !map_struct->map)
-		return;
+		return ;
 	while (map_struct->map[i])
 	{
 		free(map_struct->map[i]);
@@ -37,7 +50,7 @@ static void	dfs(t_map *map, int x, int line)
 int	check_path(t_data data, int x, int line)
 {
 	t_map	map;
-	int result;
+	int		result;
 
 	map = copy_map(data);
 	map.collectibles = data.collectibles;

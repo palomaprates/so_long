@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   is_map_enclosed.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprates- <pprates-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/25 12:49:50 by pprates-          #+#    #+#             */
+/*   Updated: 2025/05/25 12:50:09 by pprates-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 int	is_map_enclosed(char **lines_map)
@@ -6,6 +18,7 @@ int	is_map_enclosed(char **lines_map)
 	int	j;
 	int	last_line;
 	int	last;
+
 	i = 0;
 	j = 0;
 	last = ft_strlen(lines_map[i]);

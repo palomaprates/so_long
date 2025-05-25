@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   copy_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprates- <pprates-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/25 12:53:46 by pprates-          #+#    #+#             */
+/*   Updated: 2025/05/25 13:00:27 by pprates-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 t_map	copy_map(t_data data)
 {
-	t_map new_map;
-	int i;
+	t_map	new_map;
+	int		i;
 
 	new_map.map = NULL;
 	new_map.collectibles = 0;
@@ -24,8 +36,6 @@ t_map	copy_map(t_data data)
 		}
 		i++;
 	}
-	new_map.map[i] = NULL;
-	new_map.collectibles = data.collectibles;
-	new_map.flag = 0;
-	return (new_map);
+	return (new_map.map[i] = NULL, \
+	new_map.collectibles = data.collectibles, new_map.flag = 0, new_map);
 }

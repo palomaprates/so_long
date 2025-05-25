@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_amount_lines.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pprates- <pprates-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/25 12:48:19 by pprates-          #+#    #+#             */
+/*   Updated: 2025/05/25 12:48:49 by pprates-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 int	get_amount_lines(char **lines_map)
@@ -5,7 +17,7 @@ int	get_amount_lines(char **lines_map)
 	int	i;
 
 	i = 0;
-	while(lines_map[i])
+	while (lines_map[i])
 		i++;
-	return(i);
+	return (i);
 }
